@@ -1,0 +1,34 @@
+<br/><br/>												
+<div class="col-md-6 col-md-offset-2">												
+  <h2>Edit Contact      &nbsp; &nbsp; &nbsp;                   																							
+  <br/>												
+    <form [formGroup]="editForm" (ngSubmit)="onsubmit()">														
+														
+        <div class="form-group">														
+          <label for="firstName">First Name:</label>														
+          <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">														
+          <div *ngIf="submitted && editForm.controls.firstName.errors" class="error">														
+              <div class="text-danger" *ngIf="editForm.controls.firstName.errors.required">FirstName is required</div>														
+            </div>														
+        </div>											
+												
+    <div class="form-group">												
+      <label for="lastName">Last Name:</label>												
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">												
+      <div *ngIf="submitted && editForm.controls.lastName.errors" class="error">												
+        <div class="text-danger" *ngIf="editForm.controls.lastName.errors.required">LastName is required</div>												
+      </div>												
+    </div>												
+												
+    <div class="form-group">												
+      <label for="phone">Phone Number:</label>												
+      <input type="phone" formControlName="phone" placeholder="phone" name="phone" class="form-control" id="phone">												
+      <div *ngIf="submitted && editForm.controls.phone.errors" class="error">												
+        <div class="text-danger" *ngIf="editForm.controls.phone.errors.required">phone is required</div>												
+      </div>												
+    </div>	
+    <button class="btn btn-success">Update</button>&nbsp; &nbsp;												
+    <a class="btn btn-danger" href="/home">Cancel</a> 												
+    <br/><br/>	
+    										    																							
+  </form>												
